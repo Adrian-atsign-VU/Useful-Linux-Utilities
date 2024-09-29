@@ -46,7 +46,6 @@ if ostype == 'Linux':
 
                 if response == 'Y':
                     subprocess.run(['wget https://github.com/GloriousEggroll/proton-ge-custom/releases/download/GE-Proton9-15/GE-Proton9-15.tar.gz'], shell = True)
-                    subprocess.run(['mkdir ~/.var/app/com.valvesoftware.Steam/data/Steam/compatibilitytools.d/'], shell = True)
                     subprocess.run(['tar -xf GE-Proton*.tar.gz -C ~/.var/app/com.valvesoftware.Steam/data/Steam/compatibilitytools.d/'], shell = True)
 
                 elif response == 'N':
