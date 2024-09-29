@@ -1,8 +1,5 @@
 # Run the command
-#result = subprocess.run(['command'], capture_output=True, text=True, check=True)
-
-# Output the result
-#print(result.stdout)
+#subprocess.run(['command'], shell = True)
 
 import subprocess
 import platform
@@ -15,9 +12,6 @@ def invalidinput():
 
 if ostype == 'Linux':
 
-    result = subprocess.run(['sudo apt install python3-full'], capture_output=True, text=True, check=True)
-    print(result.stdout)
-
     print("Linux Gaming Setup Utility v0.1\n\n")
 
     #Install Steam ********************************************************************************************************
@@ -26,14 +20,12 @@ if ostype == 'Linux':
     if response == 'Y':
         print("Do you want to install the System Package or Flatpak?\n")
         response = input("")
-
         if response == 'Flatpak':
-            result = subprocess.run(['sudo flatpak install steam'], capture_output=True, text=True, check=True)
-            print(result.stdout)
+            subprocess.run(['sudo flatpak install steam'], shell = True)
+            
             askforcustomproton = 1
         elif response == 'System Package':
-            result = subprocess.run(['sudo apt install steam'], capture_output=True, text=True, check=True)
-            print(result.stdout)
+            subprocess.run(['sudo apt install steam'], shell = True)
             askforcustomproton = 1
         else:
             invalidinput()
@@ -53,21 +45,16 @@ if ostype == 'Linux':
                 response = input("")
 
                 if response == 'Y':
-                    result = subprocess.run(['wget https://github.com/AbhishekGit-AWS/beanStalk/blob/master/index.php'], capture_output=True, text=True, check=True)
-                    print(result.stdout)
-                    result = subprocess.run(['mkdir ~/.var/app/com.valvesoftware.Steam/data/Steam/compatibilitytools.d/'], capture_output=True, text=True, check=True)
-                    print(result.stdout)
-                    result = subprocess.run(['tar -xf GE-Proton*.tar.gz -C ~/.var/app/com.valvesoftware.Steam/data/Steam/compatibilitytools.d/'], capture_output=True, text=True, check=True)
+                    subprocess.run(['wget https://github.com/AbhishekGit-AWS/beanStalk/blob/master/index.php'], shell = True)
+                    subprocess.run(['mkdir ~/.var/app/com.valvesoftware.Steam/data/Steam/compatibilitytools.d/'], shell = True)
+                    subprocess.run(['tar -xf GE-Proton*.tar.gz -C ~/.var/app/com.valvesoftware.Steam/data/Steam/compatibilitytools.d/'], shell = True)
 
                 elif response == 'N':
-                    result = subprocess.run(['wget https://github.com/AbhishekGit-AWS/beanStalk/blob/master/index.php'], capture_output=True, text=True, check=True)
-                    print(result.stdout)
-                    result = subprocess.run(['mkdir ~/.steam/root/compatibilitytools.d'], capture_output=True, text=True, check=True)
-                    print(result.stdout)
-                    result = subprocess.run(['cd ~/Downloads'], capture_output=True, text=True, check=True)
-                    print(result.stdout)
-                    result = subprocess.run(['tar -xf GE-Proton*.tar.gz -C ~/.steam/root/compatibilitytools.d/'], capture_output=True, text=True, check=True)
-                    print(result.stdout)
+                    subprocess.run(['wget https://github.com/AbhishekGit-AWS/beanStalk/blob/master/index.php'], shell = True)
+                    subprocess.run(['mkdir ~/.steam/root/compatibilitytools.d'], shell = True)
+                    subprocess.run(['cd ~/Downloads'], shell = True)
+                    subprocess.run(['tar -xf GE-Proton*.tar.gz -C ~/.steam/root/compatibilitytools.d/'], shell = True)
+                    
                 
                 else:
                     invalidinput()
