@@ -12,9 +12,12 @@ def close():
     print()
 def invalidinput():
         print("\nInvalid input! Please restart the script.")
-        exitenabled = 1
 
 if ostype == 'Linux':
+
+    result = subprocess.run(['sudo apt install python3-full'], capture_output=True, text=True, check=True)
+    print(result.stdout)
+
     print("Linux Gaming Setup Utility v0.1\n\n")
 
     #Install Steam ********************************************************************************************************
