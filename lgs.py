@@ -45,12 +45,12 @@ if ostype == 'Linux':
                 response = input("")
 
                 if response == 'Y':
-                    subprocess.run(['wget https://github.com/AbhishekGit-AWS/beanStalk/blob/master/index.php'], shell = True)
+                    subprocess.run(['wget https://github.com/GloriousEggroll/proton-ge-custom/releases/download/GE-Proton9-15/GE-Proton9-15.tar.gz'], shell = True)
                     subprocess.run(['mkdir ~/.var/app/com.valvesoftware.Steam/data/Steam/compatibilitytools.d/'], shell = True)
                     subprocess.run(['tar -xf GE-Proton*.tar.gz -C ~/.var/app/com.valvesoftware.Steam/data/Steam/compatibilitytools.d/'], shell = True)
 
                 elif response == 'N':
-                    subprocess.run(['wget https://github.com/AbhishekGit-AWS/beanStalk/blob/master/index.php'], shell = True)
+                    subprocess.run(['wget https://github.com/GloriousEggroll/proton-ge-custom/releases/download/GE-Proton9-15/GE-Proton9-15.tar.gz'], shell = True)
                     subprocess.run(['mkdir ~/.steam/root/compatibilitytools.d'], shell = True)
                     subprocess.run(['cd ~/Downloads'], shell = True)
                     subprocess.run(['tar -xf GE-Proton*.tar.gz -C ~/.steam/root/compatibilitytools.d/'], shell = True)
