@@ -21,6 +21,8 @@ if ostype == 'Linux':
     
     if response == 'Y':
         subprocess.run(['flatpak install steam'], shell = True)
+        subprocess.run(['20'], shell = True)
+        subprocess.run(['20'], shell = True)
         print("\nWould you like to install the custom proton (GE Proton)?\nY or N\n")
         response = input("")
 
@@ -62,6 +64,17 @@ if ostype == 'Linux':
 
     print("\nWould you like to install Screenfetch?\nY or N\n")
     response = input("")
+
+    if response == 'Y':
+        subprocess.run(['sudo apt install screenfetch'], shell = True)
+
+    #Install Spotify **********************************************************************************************
+
+    print("\nWould you like to install Spotify?\nY or N\n")
+    response = input("")
+
+    if response == 'Y':
+        subprocess.run(['flatpack install spotify'], shell = True)
 
     print("\Done! Check the repo occasionally for new updates!")
 
