@@ -21,8 +21,6 @@ if ostype == 'Linux':
     
     if response == 'Y':
         subprocess.run(['flatpak install steam'], shell = True)
-        subprocess.run(['20'], shell = True)
-        subprocess.run(['20'], shell = True)
         print("\nWould you like to install the custom proton (GE Proton)?\nY or N\n")
         response = input("")
 
