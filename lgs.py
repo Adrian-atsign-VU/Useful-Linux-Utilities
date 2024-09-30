@@ -11,8 +11,9 @@ def invalidinput():
 
 if ostype == 'Linux':
 
-    print("Linux Gaming Setup Utility v0.1.5")
-    print("Version: " , ostype)
+    print("\nLinux Gaming Setup Utility v0.1.5")
+    print("Version: " , ostype , "\n\nNote: These package installers use flatpak.\n\nPress enter to continue.")
+    input("")
 
     #Install Steam ****************************************************************************************************
 
@@ -66,15 +67,23 @@ if ostype == 'Linux':
     if response == 'Y':
         subprocess.run(['sudo apt install screenfetch'], shell = True)
 
-    #Install Spotify **********************************************************************************************
+    #Install Spotify **************************************************************************************************
 
     print("\nWould you like to install Spotify?\nY or N\n")
     response = input("")
 
     if response == 'Y':
-        subprocess.run(['flatpack install spotify'], shell = True)
+        subprocess.run(['flatpak install spotify'], shell = True)
 
-    print("\Done! Check the repo occasionally for new updates!")
+    #Install Lutris ***************************************************************************************************
+
+    print("Would you like to install Lutris?\nY or N\n")
+    response = input("")
+
+    if response == 'Y':
+        subprocess.run(['flatpak install lutris'], shell = True)
+
+    print("Done! Check the repo occasionally for new updates!")
 
 else:
     print("This script is for Linux machines only, hence the name.")
